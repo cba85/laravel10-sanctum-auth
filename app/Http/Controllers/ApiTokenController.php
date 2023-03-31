@@ -24,6 +24,9 @@ class ApiTokenController extends Controller
 
         $token = $user->createToken($request->token_name);
 
+        // Abilities
+        //$token = $user->createToken($request->token_name, ['repo:view', 'repo:create']);
+
         return [
             'token' => $token->plainTextToken,
             'user' => $user
@@ -41,6 +44,8 @@ class ApiTokenController extends Controller
         $user->tokens()->where('name', $request->token_name)->delete();
 
         $token = $user->createToken($request->token_name);
+        // Abilities
+        //$token = $user->createToken($request->token_name, ['repo:view']);
 
         return [
             'token' => $token->plainTextToken,
