@@ -2,4 +2,4 @@
 
 > For demonstration purpose only
 
-Authentication API using Laravel Sanctum (register, login, logout)
+Authentication API using Laravel 10 Sanctum (register, login, logout)
